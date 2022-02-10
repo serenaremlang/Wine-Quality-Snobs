@@ -1,4 +1,5 @@
-# Wine-Quality-Snobs
+<img src='Resources/Images/header.png'>
+<h1>Wine-Quality-Snobs</h1>
 Building a wine classifier for wine makers to help plan physiochemical changes in wine making process.
 
 Classification problem: [archive.ics.uci.edu/ml/datasets/wine+quality](https://archive.ics.uci.edu/ml/datasets/wine+quality)

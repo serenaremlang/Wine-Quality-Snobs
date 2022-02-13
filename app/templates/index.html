@@ -19,10 +19,10 @@
 </head>
 <body class="bg-image bg-wine">
     <div class="container-fluid">
-        <div class="row mt-5">
+        <div class="row pt-5">
             <div class="col-0 col-xl-4"></div>
             <div class="col-12 col-xl-4">            
-                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <nav class="navbar navbar-expand-lg navbar-dark mb-4 bg-dark">
                     <div class="container-fluid">
                         <div class="navbar-brand d-flex align-items-center" >
                             <img src="{{ url_for('static', filename='images/snob.png') }}" alt="" height="50" class="d-inline-block align-text-top">
@@ -33,67 +33,126 @@
                         </button>
                         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                             <div class="navbar-nav ms-auto">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                                <a class="nav-link" href="#">Explain</a>
-                                <a class="nav-link" href="#">About</a>              
+                                <a class="nav-link active" aria-current="page" href="/">Home</a>
+                                <a class="nav-link" href="/compare">Compare</a>
+                                <a class="nav-link" href="/explain">Explain</a>
+                                <a class="nav-link" href="/about">About</a>                
                             </div>
                         </div>
                     </div>
                 </nav>                
-                <form class="mt-5 mx-3 p-0 text-light">
-                    <div class="row p-3 bg-dark">
+                <form id="frmWineVals" class="mx-3 p-0 text-light">
+                    <div class="row p-3 mb-4 bg-dark">
+                        <div class="col">
+                            <select class="form-select" aria-label="Default select example" onchange="optionChanged(this.value)">
+                                <option selected>Select to choose between Red or White for your Wine type</option>
+                                <option value="1">Red</option>
+                                <option value="2">White</option>                                
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row p-3 mb-4 bg-dark" id="sliders">
                         <div class="col">
                             <div class="mb-3">
-                                <label for="rng_fa" class="form-label">Fixed Acidity</label><div class="float-end" id="val_fa">0.0</div>
-                                <input type="range" class="form-range" min="0" max="5" step="0.5" id="rng_fa">
+                                <label for="rng_fa" class="form-label">Fixed Acidity</label><div class="float-end rngval" id="val_fa">0.0</div>
+                                <div class="justify-content-center text-center">
+                                    <div class="float-start">03.800</div>
+                                    <input type="range" class="form-range" style="width:50%" min="3.8" max="14.2" step="0.2" id="rng_fa" data-id="val_fa">
+                                    <div class="float-end">14.200</div>
+                                </div>
                             </div>
                             <div class="mb-3">
-                                <label for="rng_va" class="form-label">Volatile Acidity</label><div class="float-end" id="val_va">0.0</div>
-                                <input type="range" class="form-range" min="0" max="5" step="0.5" id="rng_va">
+                                <label for="rng_va" class="form-label">Volatile Acidity</label><div class="float-end rngval" id="val_va">0.0</div>
+                                <div class="justify-content-center text-center">
+                                    <div class="float-start">0.0800</div>
+                                    <input type="range" class="form-range" style="width:50%" min="0.08" max="1.1" step="0.01" id="rng_va" data-id="val_va">
+                                    <div class="float-end">1.1000</div>
+                                </div>
                             </div>
                             <div class="mb-3">
-                                <label for="rng_ca" class="form-label">Citric Acid</label><div class="float-end" id="val_ca">0.0</div>
-                                <input type="range" class="form-range" min="0" max="5" step="0.5" id="rng_ca">
+                                <label for="rng_ca" class="form-label">Citric Acid</label><div class="float-end rngval" id="val_ca">0.0</div>
+                                <div class="justify-content-center text-center">
+                                    <div class="float-start">0.0000</div>
+                                    <input type="range" class="form-range" style="width:50%" min="0" max="1.66" step="0.01" id="rng_ca" data-id="val_ca">
+                                    <div class="float-end">1.6600</div>
+                                </div>
                             </div>
                             <div class="mb-3">
-                                <label for="rng_rs" class="form-label">Residual Sugar</label><div class="float-end" id="val_rs">0.0</div>
-                                <input type="range" class="form-range" min="0" max="5" step="0.5" id="rng_rs">
+                                <label for="rng_rs" class="form-label">Residual Sugar</label><div class="float-end rngval" id="val_rs">0.0</div>
+                                <div class="justify-content-center text-center">
+                                    <div class="float-start">0.6000</div>
+                                    <input type="range" class="form-range" style="width:50%" min="0.600" max="65.800" step="0.1" id="rng_rs" data-id="val_rs">
+                                    <div class="float-end">65.800</div>
+                                </div>
                             </div>
                             <div class="mb-3">
-                                <label for="rng_c" class="form-label">Chlorides</label><div class="float-end" id="val_c">0.0</div>
-                                <input type="range" class="form-range" min="0" max="5" step="0.5" id="rng_c">
+                                <label for="rng_c" class="form-label">Chlorides</label><div class="float-end rngval" id="val_c">0.0</div>
+                                <div class="justify-content-center text-center">
+                                    <div class="float-start">0.0090</div>
+                                    <input type="range" class="form-range" style="width:50%" min="0.009" max="0.346" step="0.001" id="rng_c" data-id="val_c">
+                                    <div class="float-end">0.3460</div>
+                                </div>
                             </div>
                             <div class="mb-3">
-                                <label for="rng_fsd" class="form-label">Free Sulfur Dioxide</label><div class="float-end" id="val_fsd">0.0</div>
-                                <input type="range" class="form-range" min="0" max="5" step="0.5" id="rng_fsd">
+                                <label for="rng_fsd" class="form-label">Free Sulfur Dioxide</label><div class="float-end rngval" id="val_fsd">0.0</div>
+                                <div class="justify-content-center text-center">
+                                    <div class="float-start">02.000</div>
+                                    <input type="range" class="form-range" style="width:50%" min="2.00" max="289.00" step="1" id="rng_fsd" data-id="val_fsd">
+                                    <div class="float-end">289.00</div>
+                                </div>
                             </div>
                         </div>                    
                         <div class="col">                    
                             <div class="mb-3">
-                                <label for="rng_tsd" class="form-label">Total Sulfur Dioxide</label><div class="float-end" id="val_tsd">0.0</div>
-                                <input type="range" class="form-range" min="0" max="5" step="0.5" id="rng_tsd">
+                                <label for="rng_tsd" class="form-label">Total Sulfur Dioxide</label><div class="float-end rngval" id="val_tsd">0.0</div>
+                                <div class="justify-content-center text-center">
+                                    <div class="float-start">09.000</div>
+                                    <input type="range" class="form-range" style="width:50%" min="9.0" max="440.0" step="1" id="rng_tsd" data-id="val_tsd">
+                                    <div class="float-end">440.00</div>
+                                </div>
                             </div>
                             <div class="mb-3">
-                                <label for="rng_d" class="form-label">Density</label><div class="float-end" id="val_d">0.0</div>
-                                <input type="range" class="form-range" min="0" max="5" step="0.5" id="rng_d">
+                                <label for="rng_d" class="form-label">Density</label><div class="float-end rngval" id="val_d">0.0</div>
+                                <div class="justify-content-center text-center">
+                                    <div class="float-start">0.9871</div>
+                                    <input type="range" class="form-range" style="width:50%" min="0.9871" max="1.0390" step="0.0001" id="rng_d" data-id="val_d">
+                                    <div class="float-end">1.0390</div>
+                                </div>
                             </div>
                             <div class="mb-3">
-                                <label for="rng_ph" class="form-label">pH</label><div class="float-end" id="val_ph">0.0</div>
-                                <input type="range" class="form-range" min="0" max="5" step="0.5" id="rng_ph">
+                                <label for="rng_ph" class="form-label">pH</label><div class="float-end rngval" id="val_ph">0.0</div>
+                                <div class="justify-content-center text-center">
+                                    <div class="float-start">02.720</div>
+                                    <input type="range" class="form-range" style="width:50%" min="2.720" max="3.820" step="0.01" id="rng_ph" data-id="val_ph">
+                                    <div class="float-end">03.820</div>
+                                </div>
                             </div>
                             <div class="mb-3">
-                                <label for="rng_s" class="form-label">Sulphates</label><div class="float-end" id="val_s">0.0</div>
-                                <input type="range" class="form-range" min="0" max="5" step="0.5" id="rng_s">
+                                <label for="rng_s" class="form-label">Sulphates</label><div class="float-end rngval" id="val_s">0.0</div>
+                                <div class="justify-content-center text-center">
+                                    <div class="float-start">0.2200</div>
+                                    <input type="range" class="form-range" style="width:50%" min="0.22" max="1.08" step="0.01" id="rng_s" data-id="val_s">
+                                    <div class="float-end">1.0800</div>
+                                </div>
                             </div>
                             <div class="mb-3">
-                                <label for="rng_a" class="form-label">Alcohol</label><div class="float-end" id="val_a">0.0</div>
-                                <input type="range" class="form-range" min="0" max="5" step="0.5" id="rng_a">
+                                <label for="rng_a" class="form-label">Alcohol</label><div class="float-end rngval" id="val_a">0.0</div>
+                                <div class="justify-content-center text-center">
+                                    <div class="float-start">08.000</div>
+                                    <input type="range" class="form-range" style="width:50%" min="8.00" max="14.20" step="0.10" id="rng_a" data-id="val_a">
+                                    <div class="float-end">14.200</div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <button class="btn btn-danger float-end mt-3" type="button">Submit</button> 
+                                <input class="btn btn-danger float-end mt-3 me-2" type="reset" value="Reset">
                             </div>
                         </div>
                     </div>
-                    <div class="row p-3 bg-dark mt-5">
-                        <div class="col bg-dark">
-                            <h3 class="float-start">Your predicted wine quality score is:</h3><div class="float-end"><h3 id="wqs" class="float-start">0.0</h3><h3 id="wqs" class="float-start">/10</h3></div>
+                    <div class="row p-3 bg-dark">
+                        <div class="col justify-content-center text-center">
+                            <h3>Your predicted wine quality score is:</h3>
+                            <h3 id="wqs" style="display:inline">0.0</h3><h3 style="display:inline">/10</h3>
                         </div>
                     </div>
                 </form>
@@ -103,5 +162,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
 </body>
 </html>

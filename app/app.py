@@ -26,6 +26,24 @@ def home():
     # Return templated data
     return render_template("index.html")
 
+@app.route("/compare")
+def compare():
+
+    # Return templated data
+    return render_template("comparison.html")
+
+@app.route("/explain")
+def explain():
+
+    # Return templated data
+    return render_template("explain.html")
+
+@app.route("/about")
+def about():
+
+    # Return templated data
+    return render_template("about.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)

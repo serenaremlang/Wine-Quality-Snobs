@@ -4,16 +4,8 @@ d3.selectAll(".form-range")
         d3.select('#'+d3.select(this).attr('data-id')).text(this.value)
     });
 
-function resetUI(event) {    
-    d3.selectAll('.rngval').text('0.0');
-}
 
-frmWineVals.addEventListener('reset', resetUI);
-
-
-function optionChanged(modelId) {    
-    console.log(modelId);
-
+function optionChanged(modelId) {  
     if (modelId == 1 || modelId == 2) 
     {
         d3.selectAll(".form-range").attr('disabled', null);
@@ -23,3 +15,11 @@ function optionChanged(modelId) {
         d3.selectAll(".form-range").attr('disabled', true);
     }    
 }
+
+function resetUI(event) {    
+    d3.selectAll('.rngval').text('0.0');
+    optionChanged('reset');
+}
+
+frmWineVals.addEventListener('reset', resetUI);
+

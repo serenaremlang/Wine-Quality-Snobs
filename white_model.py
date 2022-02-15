@@ -1,9 +1,8 @@
-import pickle
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.preprocessing import StandardScaler
-import numpy as np
-
 def white_model(user_input_array):
+    import pickle
+    from sklearn.ensemble import RandomForestClassifier
+    from sklearn.preprocessing import StandardScaler
+    import numpy as np
     #Load Model
     with open('white_model.pkl', 'rb') as file:
         white_model = pickle.load(file)

@@ -24,10 +24,11 @@ CREATE TABLE "winequalityWhite" (
 	"chlorides"	INTEGER NOT NULL,
 	"free sulfur dioxide"	INTEGER NOT NULL,
 	"total sulfur dioxide"	INTEGER NOT NULL,
+	"density"	INTEGER NOT NULL,
 	"pH"	INTEGER NOT NULL,
 	"sulphates"	INTEGER NOT NULL,
 	"alcohol"	INTEGER NOT NULL,
 	"quality"	INTEGER NOT NULL,
-	"density"	INTEGER NOT NULL,
+
 	PRIMARY KEY("wine_id")
 )

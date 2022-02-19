@@ -78,7 +78,8 @@ Output variable (based on sensory data):
     - SKLearn
     - Keras Tensorflow
 
- ## How it ran <br>
+ ## How it ran 
+ <br>
  <img src="Resources/Images/getwinescorefunction.png">
  <br>
  <img src="Resources/Images/getwinescorefunction2.png">

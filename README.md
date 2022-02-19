@@ -40,26 +40,26 @@ Output variable (based on sensory data):
 * Final Idea: Let's choose a predictive model that will help winemakers make better wine!
 
 ## The Data: How it Looks
-<img src="/Users/smith/Desktop/GitHub Repos/Wine-Quality-Snobs/Resources/Images/white_wine_df.png">
-<img src="/Users/smith/Desktop/GitHub Repos/Wine-Quality-Snobs/Resources/Images/white_wine_describe.png">
-<img src="/Users/smith/Desktop/GitHub Repos/Wine-Quality-Snobs/Resources/Images/red_wine_describe.png">
+<img src="Resources/Images/white_wine_df.png">
+<img src="Resources/Images/white_wine_describe.png">
+<img src="Resources/Images/red_wine_describe.png">
 
 
 ## Preprocessing
 * Created 2 bins based on quality levels 1-5 and 6-10 to help evenly spread the data <br>
-<img src="/Users/smith/Desktop/GitHub Repos/Wine-Quality-Snobs/Resources/Images/Qualitycode.png">
+<img src="Resources/Images/Qualitycode.png">
 * Checked outliers with box/whisper plots and decided to keep the outliers for the red wine and remove the ones from the white set. The white wine had more data so the accuracy went up without the outliers however the red data was a bit lacking and needed the outliers to help raise our predictability.
-<img src="/Users/smith/Desktop/GitHub Repos/Wine-Quality-Snobs/Resources/Images/outlier_removal.png">
+<img src="Resources/Images/outlier_removal.png">
 * Scaled the data to normalize the values in each feature <br>
-<img src="/Users/smith/Desktop/GitHub Repos/Wine-Quality-Snobs/Resources/Images/scaling.png">
+<img src="Resources/Images/scaling.png">
 
 ## Model Selection
 
 * After trying 3 bins vs 2 we settled on 2 bins for our binary categorization using the ExtraTreesClassifier <br>
 * Red Wine <br>
-<img src="/Users/smith/Desktop/GitHub Repos/Wine-Quality-Snobs/Resources/Images/red_trees.png">
+<img src="Resources/Images/red_trees.png">
 * White Wine <br>
-<img src="/Users/smith/Desktop/GitHub Repos/Wine-Quality-Snobs/Resources/Images/white_trees.png">
+<img src="Resources/Images/white_trees.png">
 
 
 ## The App
@@ -78,17 +78,17 @@ Output variable (based on sensory data):
  - SKLearn
  - Keras Tensorflow
  ## How it ran <br>
- <img src="/Users/smith/Desktop/GitHub Repos/Wine-Quality-Snobs/Resources/Images/getwinescorefunction.png">
+ <img src="Resources/Images/getwinescorefunction.png">
  <br>
- <img src="/Users/smith/Desktop/GitHub Repos/Wine-Quality-Snobs/Resources/Images/getwinescorefunction2.png">
+ <img src="Resources/Images/getwinescorefunction2.png">
  <br>
- <img src="/Users/smith/Desktop/GitHub Repos/Wine-Quality-Snobs/Resources/Images/processmodel.png">
+ <img src="Resources/Images/processmodel.png">
  <br>
- <img src="/Users/smith/Desktop/GitHub Repos/Wine-Quality-Snobs/Resources/Images/processmodel2.png">
+ <img src="Resources/Images/processmodel2.png">
  <br>
- <img src="/Users/smith/Desktop/GitHub Repos/Wine-Quality-Snobs/Resources/Images/processmodel3.png">
+ <img src="Resources/Images/processmodel3.png">
  <br>
- <img src="/Users/smith/Desktop/GitHub Repos/Wine-Quality-Snobs/Resources/Images/red_pickle.png">
+ <img src="Resources/Images/red_pickle.png">
 
 
 ## [The Demo](https://wine-quality-snobs.herokuapp.com/)

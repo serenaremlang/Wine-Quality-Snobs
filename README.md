@@ -67,16 +67,17 @@ Output variable (based on sensory data):
 * How do we want to do it? Create a machine learning algorithm to help predict the quality outcome of a wine base of 11 physiochemical properties and deploy it to a website for winemakers to be able to tweak their recipes
 * The goal? To improve wine quality around the world, make winemakers lifes easier and improve the final product for the consumers
 * Tech Used:
- - Python
- - HTML
- - SQLITE
- - Pickle
- - CSS/Bootstrap
- - Heroku
- - Flask
- - Pandas
- - SKLearn
- - Keras Tensorflow
+    - Python
+    - HTML
+    - SQLITE
+    - Pickle
+    - CSS/Bootstrap
+    - Heroku
+    - Flask
+    - Pandas
+    - SKLearn
+    - Keras Tensorflow
+
  ## How it ran <br>
  <img src="Resources/Images/getwinescorefunction.png">
  <br>

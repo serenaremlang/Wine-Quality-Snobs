@@ -19,7 +19,17 @@ def getWineScore(
     score = []
     score.append(3) # 3 means we got nothing good going on
 
-    input = np.array([fixed_acidity,volatile_acidity,citric_acid,residual_sugar,chlorides,free_sulfur_dioxide,total_sulfur_dioxide,density,pH,sulphates,alcohol])
+    input = np.array([fixed_acidity,
+    volatile_acidity,
+    citric_acid,
+    residual_sugar,
+    chlorides,
+    free_sulfur_dioxide,
+    total_sulfur_dioxide,
+    density,
+    pH,
+    sulphates,
+    alcohol])
     f_input = input.astype(np.float)
     print(f_input)
     # print(f'input:{float(input)}')

@@ -1,7 +1,5 @@
 def red_model(user_input_array):
     import pickle
-    import xgboost as xgb
-    # from sklearn.preprocessing import StandardScaler
     import numpy as np
     #Load Model
     with open('red_model.pkl', 'rb') as file:
